@@ -59,6 +59,26 @@ footer strong{color:#fff;letter-spacing:4px}
 @media(max-width:850px){.nav{align-items:flex-start;flex-direction:column;padding:10px 0}nav{overflow:auto;flex-wrap:nowrap;width:100%}.subcategories{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:500px){.subcategories{grid-template-columns:1fr}.hero{padding-top:50px}}
 </style>
+<style>
+/* ===== CATÁLOGO MARYNEL · CATEGORÍAS DESPLEGABLES ===== */
+.category-menu{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:28px}
+.category-card{border:1px solid var(--line);border-radius:17px;overflow:hidden;background:linear-gradient(145deg,rgba(8,24,43,.95),rgba(2,7,14,.95))}
+.category-title{width:100%;border:0;background:transparent;color:#fff;padding:20px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;font-size:16px;font-weight:800;text-align:left}
+.category-title:hover{background:rgba(0,123,255,.10)}
+.category-arrow{color:#5eefff;font-size:22px;transition:.2s}
+.category-card.open .category-arrow{transform:rotate(45deg)}
+.subcategory-panel{display:none;padding:0 15px 15px;grid-template-columns:repeat(2,1fr);gap:8px}
+.category-card.open .subcategory-panel{display:grid}
+.subcategory-btn{border:1px solid rgba(24,183,255,.25);border-radius:10px;background:rgba(2,10,20,.65);color:#cfe0f2;padding:11px 10px;cursor:pointer;text-align:left;font-size:12px}
+.subcategory-btn:hover,.subcategory-btn.active{border-color:#18d8ff;background:rgba(0,123,255,.16);color:#fff}
+.pending-category{grid-column:1/-1;color:var(--muted);padding:10px;font-size:12px}
+.catalog-results{margin-top:28px}
+.results-head{display:flex;align-items:end;justify-content:space-between;gap:15px;margin-bottom:16px}
+.results-head h3{margin-top:5px;font-size:22px}
+#productCount{color:var(--muted);font-size:12px}
+.catalog-results .product-grid{margin-top:0}
+@media(max-width:700px){.category-menu{grid-template-columns:1fr}.subcategory-panel{grid-template-columns:1fr}.results-head{align-items:flex-start;flex-direction:column}}
+</style>
 </head>
 <body>
 <header>
@@ -88,91 +108,103 @@ footer strong{color:#fff;letter-spacing:4px}
 <section class="container section" id="catalogo">
   <div class="section-title">
     <div class="eyebrow">CATÁLOGO DE PRODUCTOS</div>
-    <h2>Categorías</h2>
-    <p>Los productos reales se mostrarán aquí cuando el catálogo sea conectado con Firebase.</p>
+    <h2>Explora por categoría</h2>
+    <p>Selecciona una categoría para mostrar sus subcategorías. Los productos se cargarán posteriormente desde Firebase.</p>
   </div>
 
-  <div class="category-nav">
-    <a href="#ropa">Ropa / Moda</a>
-    <a href="#calzado">Calzado</a>
-    <a href="#accesorios">Accesorios</a>
-    <a href="#telefonos">Teléfonos</a>
-    <a href="#relojes">Relojes</a>
-    <a href="#otros">Otros</a>
+  <div class="category-menu">
+
+    <article class="category-card">
+      <button class="category-title" type="button" aria-expanded="false">
+        <span>👗 Ropa / Moda</span><span class="category-arrow">＋</span>
+      </button>
+      <div class="subcategory-panel">
+        <button class="subcategory-btn">Lencería</button>
+        <button class="subcategory-btn">Blusas</button>
+        <button class="subcategory-btn">Pantalones hombre</button>
+        <button class="subcategory-btn">Pantalones mujer</button>
+        <button class="subcategory-btn">Chumpas</button>
+        <button class="subcategory-btn">Sweater</button>
+        <button class="subcategory-btn">Camisetas</button>
+      </div>
+    </article>
+
+    <article class="category-card">
+      <button class="category-title" type="button" aria-expanded="false">
+        <span>👟 Calzado</span><span class="category-arrow">＋</span>
+      </button>
+      <div class="subcategory-panel">
+        <button class="subcategory-btn">Deportivo</button>
+        <button class="subcategory-btn">Casual</button>
+        <button class="subcategory-btn">Ejecutivo</button>
+        <button class="subcategory-btn">Calcetines y calcetas</button>
+      </div>
+    </article>
+
+    <article class="category-card">
+      <button class="category-title" type="button" aria-expanded="false">
+        <span>👜 Accesorios</span><span class="category-arrow">＋</span>
+      </button>
+      <div class="subcategory-panel">
+        <button class="subcategory-btn">Gorras caballero</button>
+        <button class="subcategory-btn">Gorras dama</button>
+        <button class="subcategory-btn">Cadenas</button>
+        <button class="subcategory-btn">Aretes</button>
+        <button class="subcategory-btn">Gafas</button>
+        <button class="subcategory-btn">Ganchos cabello</button>
+      </div>
+    </article>
+
+    <article class="category-card">
+      <button class="category-title" type="button" aria-expanded="false">
+        <span>📱 Teléfonos</span><span class="category-arrow">＋</span>
+      </button>
+      <div class="subcategory-panel">
+        <button class="subcategory-btn">Cristal templado</button>
+        <button class="subcategory-btn">Audífonos con cable</button>
+        <button class="subcategory-btn">Cargadores</button>
+        <button class="subcategory-btn">Cables USB</button>
+        <button class="subcategory-btn">Audífonos Bluetooth</button>
+      </div>
+    </article>
+
+    <article class="category-card">
+      <button class="category-title" type="button" aria-expanded="false">
+        <span>⌚ Relojes</span><span class="category-arrow">＋</span>
+      </button>
+      <div class="subcategory-panel">
+        <button class="subcategory-btn">Seiko</button>
+        <button class="subcategory-btn">Raklo</button>
+      </div>
+    </article>
+
+    <article class="category-card">
+      <button class="category-title" type="button" aria-expanded="false">
+        <span>📦 Otros</span><span class="category-arrow">＋</span>
+      </button>
+      <div class="subcategory-panel">
+        <div class="pending-category">Pendiente de detalles</div>
+      </div>
+    </article>
+
   </div>
 
-  <article class="category" id="ropa">
-    <h3>👕 Ropa / Moda</h3>
-    <p class="category-desc">Moda organizada por tipo de prenda.</p>
-    <div class="subcategories">
-      <div class="item"><strong>Lencería</strong><span>Productos de lencería.</span></div>
-      <div class="item"><strong>Blusas</strong><span>Blusas para dama.</span></div>
-      <div class="item"><strong>Pantalones hombre</strong><span>Pantalones para caballero.</span></div>
-      <div class="item"><strong>Pantalones mujer</strong><span>Pantalones para dama.</span></div>
-      <div class="item"><strong>Chumpas</strong><span>Chumpas y prendas exteriores.</span></div>
-      <div class="item"><strong>Sweater</strong><span>Sweaters y prendas abrigadoras.</span></div>
-      <div class="item"><strong>Camisetas</strong><span>Camisetas para diferentes estilos.</span></div>
+  <div class="catalog-results">
+    <div class="results-head">
+      <div>
+        <span class="eyebrow">PRODUCTOS</span>
+        <h3 id="selectedCategoryTitle">Selecciona una subcategoría</h3>
+      </div>
+      <span id="productCount">0 productos</span>
     </div>
-  </article>
-
-  <article class="category" id="calzado">
-    <h3>👟 Calzado</h3>
-    <p class="category-desc">Tipos de calzado y complementos.</p>
-    <div class="subcategories">
-      <div class="item"><strong>Deportivo</strong><span>Calzado deportivo.</span></div>
-      <div class="item"><strong>Casual</strong><span>Calzado para uso diario.</span></div>
-      <div class="item"><strong>Ejecutivo</strong><span>Calzado formal y ejecutivo.</span></div>
-      <div class="item"><strong>Calcetines y calcetas</strong><span>Complementos para calzado.</span></div>
-    </div>
-  </article>
-
-  <article class="category" id="accesorios">
-    <h3>👜 Accesorios</h3>
-    <p class="category-desc">Accesorios para caballero, dama y cabello.</p>
-    <div class="subcategories">
-      <div class="item"><strong>Gorras caballero</strong><span>Gorras para caballero.</span></div>
-      <div class="item"><strong>Gorras dama</strong><span>Gorras para dama.</span></div>
-      <div class="item"><strong>Cadenas</strong><span>Cadenas y accesorios.</span></div>
-      <div class="item"><strong>Aretes</strong><span>Aretes y accesorios.</span></div>
-      <div class="item"><strong>Gafas</strong><span>Gafas y complementos.</span></div>
-      <div class="item"><strong>Ganchos cabello</strong><span>Accesorios para el cabello.</span></div>
-    </div>
-  </article>
-
-  <article class="category" id="telefonos">
-    <h3>📱 Teléfonos</h3>
-    <p class="category-desc">Accesorios y complementos para teléfonos.</p>
-    <div class="subcategories">
-      <div class="item"><strong>Cristal templado</strong><span>Protección para pantalla.</span></div>
-      <div class="item"><strong>Audífonos con cable</strong><span>Audífonos alámbricos.</span></div>
-      <div class="item"><strong>Cargadores</strong><span>Cargadores para dispositivos.</span></div>
-      <div class="item"><strong>Cables USB</strong><span>Cables y conexiones USB.</span></div>
-      <div class="item"><strong>Audífonos Bluetooth</strong><span>Audio inalámbrico.</span></div>
-    </div>
-  </article>
-
-  <article class="category" id="relojes">
-    <h3>⌚ Relojes</h3>
-    <p class="category-desc">Relojes organizados por marca.</p>
-    <div class="subcategories">
-      <div class="item"><strong>Seiko</strong><span>Relojes Seiko.</span></div>
-      <div class="item"><strong>Raklo</strong><span>Relojes Raklo.</span></div>
-    </div>
-  </article>
-
-  <article class="category" id="otros">
-    <h3>📦 Otros</h3>
-    <p class="category-desc">Productos pendientes de definir y clasificar.</p>
-    <div class="subcategories">
-      <div class="item"><strong>Pendiente de detalles</strong><span>Esta sección queda preparada para agregar nuevas subcategorías.</span></div>
-    </div>
-  </article>
+    <div id="productGrid" class="product-grid"></div>
+    <div id="emptyProducts" class="empty">Selecciona una subcategoría para ver sus productos.</div>
+  </div>
 
   <section class="discount" id="descuentos">
     <div class="eyebrow">PROMOCIONES</div>
     <h2>🏷️ Descuentos MARYNEL</h2>
-    <p>Los descuentos y promociones de productos se administrarán dentro del catálogo. Esta sección no contiene ni ejecuta código de la Ruleta MARYNEL.</p>
-    <div class="notice">Los premios de la ruleta pertenecen exclusivamente a la Ruleta MARYNEL.</div>
+    <p>Los descuentos y promociones de productos se administrarán dentro del catálogo.</p>
   </section>
 </section>
 </main>
@@ -184,5 +216,35 @@ footer strong{color:#fff;letter-spacing:4px}
     <small>Innovación • Movimiento • Futuro</small>
   </div>
 </footer>
+<script>
+/* ===== MARYNEL · NAVEGACIÓN DEL CATÁLOGO ===== */
+document.querySelectorAll(".category-title").forEach(button=>{
+  button.addEventListener("click",()=>{
+    const card=button.closest(".category-card");
+    const isOpen=card.classList.contains("open");
+    document.querySelectorAll(".category-card").forEach(c=>{
+      c.classList.remove("open");
+      c.querySelector(".category-title").setAttribute("aria-expanded","false");
+    });
+    if(!isOpen){
+      card.classList.add("open");
+      button.setAttribute("aria-expanded","true");
+    }
+  });
+});
+
+document.querySelectorAll(".subcategory-btn").forEach(button=>{
+  button.addEventListener("click",()=>{
+    document.querySelectorAll(".subcategory-btn").forEach(b=>b.classList.remove("active"));
+    button.classList.add("active");
+    document.getElementById("selectedCategoryTitle").textContent=button.textContent;
+    document.getElementById("productCount").textContent="0 productos";
+    document.getElementById("productGrid").innerHTML="";
+    document.getElementById("emptyProducts").style.display="block";
+    document.getElementById("emptyProducts").textContent="Todavía no hay productos en esta subcategoría.";
+  });
+});
+</script>
+
 </body>
 </html>
