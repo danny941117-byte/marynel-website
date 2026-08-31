@@ -3,486 +3,177 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MARYNEL | Todo lo que necesitas está en MARYNEL</title>
+<title>MARYNEL | Catálogo</title>
 <style>
 :root{
   --bg:#020712;--panel:#071426;--blue:#087cff;--cyan:#18d8ff;
-  --white:#f4f8ff;--muted:#8ea4bf;--line:rgba(24,183,255,.38);
+  --white:#f4f8ff;--muted:#8ea4bf;--line:rgba(24,183,255,.30)
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{
   font-family:Arial,Helvetica,sans-serif;color:var(--white);background:
-  radial-gradient(circle at 15% 20%,rgba(0,123,255,.18),transparent 28%),
-  radial-gradient(circle at 85% 25%,rgba(0,216,255,.10),transparent 25%),
+  radial-gradient(circle at 15% 20%,rgba(0,123,255,.15),transparent 28%),
+  radial-gradient(circle at 85% 25%,rgba(0,216,255,.08),transparent 25%),
   linear-gradient(145deg,#01040a,#061327 52%,#01040a);
   min-height:100vh;overflow-x:hidden
 }
-body:before{
-  content:"";position:fixed;inset:0;pointer-events:none;opacity:.15;
-  background-image:linear-gradient(rgba(0,140,255,.08) 1px,transparent 1px),
-  linear-gradient(90deg,rgba(0,140,255,.08) 1px,transparent 1px);
-  background-size:42px 42px
-}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.12;background-image:linear-gradient(rgba(0,140,255,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(0,140,255,.08) 1px,transparent 1px);background-size:42px 42px}
 .container{width:min(1180px,92%);margin:auto}
-header{
-  position:sticky;top:0;z-index:50;background:rgba(2,7,15,.86);
-  backdrop-filter:blur(15px);border-bottom:1px solid var(--line)
-}
-.nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:4px}
-.logo{
-  width:48px;height:48px;border-radius:50%;display:grid;place-items:center;
-  border:1px solid #139bff;box-shadow:0 0 20px rgba(0,123,255,.3);
-  background:radial-gradient(circle,#15314e,#020814 68%)
-}
-.logo b{font-size:25px;background:linear-gradient(135deg,#fff,#08a8ff);
-  -webkit-background-clip:text;color:transparent}
+header{position:sticky;top:0;z-index:20;background:rgba(2,7,15,.90);backdrop-filter:blur(15px);border-bottom:1px solid var(--line)}
+.nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:4px;color:#fff;text-decoration:none}
+.logo{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;border:1px solid #139bff;box-shadow:0 0 20px rgba(0,123,255,.3);background:radial-gradient(circle,#15314e,#020814 68%)}
+.logo b{font-size:23px;background:linear-gradient(135deg,#fff,#08a8ff);-webkit-background-clip:text;color:transparent}
 nav{display:flex;gap:6px;flex-wrap:wrap}
-nav a{color:#c8d6e8;text-decoration:none;padding:10px 12px;border-radius:9px;font-size:12px}
-nav a:hover{background:rgba(0,123,255,.12);color:white}
-
-.hero{
-  min-height:650px;padding:65px 0 50px;display:grid;
-  grid-template-columns:1fr 1fr;align-items:center;gap:35px
-}
-.kicker{color:var(--cyan);font-size:12px;font-weight:700;letter-spacing:4px;margin-bottom:15px}
-h1{font-size:clamp(42px,6vw,72px);line-height:.95;letter-spacing:1px}
-h1 span{color:var(--blue)}
-.hero p{max-width:590px;color:var(--muted);line-height:1.7;margin:22px 0}
-.buttons{display:flex;gap:12px;flex-wrap:wrap}
-.btn{
-  text-decoration:none;color:#fff;padding:14px 20px;border-radius:12px;
-  border:1px solid #159cff;background:linear-gradient(135deg,#078aff,#0347a2);
-  font-weight:700;font-size:13px;box-shadow:0 0 28px rgba(0,123,255,.2)
-}
-.btn.alt{background:transparent;border-color:rgba(255,255,255,.2)}
-
-.avatar-card{
-  position:relative;min-height:560px;border:1px solid var(--line);
-  border-radius:25px;overflow:hidden;background:
-  radial-gradient(circle at 50% 45%,rgba(0,129,255,.20),transparent 35%),
-  linear-gradient(150deg,#07182d,#020710);
-  box-shadow:0 25px 70px rgba(0,0,0,.5),0 0 40px rgba(0,123,255,.12)
-}
-.avatar-card:after{
-  content:"";position:absolute;inset:12px;border:1px solid rgba(0,155,255,.15);
-  border-radius:18px;pointer-events:none
-}
-.holo{
-  position:absolute;left:50%;top:47%;transform:translate(-50%,-50%);
-  width:280px;height:420px;border-radius:48% 48% 42% 42%;
-  background:
-  radial-gradient(ellipse at 50% 17%,#f0c39f 0 8%,transparent 9%),
-  radial-gradient(ellipse at 50% 23%,#d9a77e 0 17%,transparent 18%),
-  linear-gradient(90deg,transparent 0 13%,#f3d7c0 14% 86%,transparent 87%),
-  linear-gradient(180deg,#d6a06f 0 25%,#f2c6a3 26% 57%,#111 58% 100%);
-  filter:drop-shadow(0 0 30px rgba(0,166,255,.32));
-  box-shadow:inset 0 0 35px rgba(255,255,255,.10)
-}
-.holo:before{
-  content:"";position:absolute;left:35px;right:35px;top:-35px;height:160px;
-  border-radius:50% 50% 35% 35%;
-  background:linear-gradient(115deg,#fff0d3,#c9844e 38%,#6b351e 85%);
-  box-shadow:-30px 35px 0 -5px rgba(207,137,81,.65),30px 35px 0 -5px rgba(207,137,81,.65)
-}
-.holo:after{
-  content:"LYRA X7";position:absolute;bottom:-62px;left:50%;
-  transform:translateX(-50%);font-weight:800;letter-spacing:4px;color:#55cfff;
-  text-shadow:0 0 14px #007bff;font-size:14px;white-space:nowrap
-}
-.scan{
-  position:absolute;left:8%;right:8%;height:2px;top:25%;
-  background:linear-gradient(90deg,transparent,#13cfff,transparent);
-  box-shadow:0 0 15px #00aaff;animation:scan 3.5s linear infinite;z-index:3
-}
-@keyframes scan{0%{top:18%;opacity:0}20%{opacity:1}80%{opacity:1}100%{top:82%;opacity:0}}
-.id{
-  position:absolute;top:25px;left:25px;padding:13px 15px;border:1px solid var(--line);
-  border-radius:12px;background:rgba(2,9,19,.72);font-size:11px;line-height:1.8;color:#b9d8f7
-}
-.id strong{display:block;color:#fff;font-size:15px}
-.slogan{position:absolute;right:25px;top:28px;color:#fff;font-size:12px;letter-spacing:2px}
-
-.section{padding:75px 0}
+nav a{color:#c8d6e8;text-decoration:none;padding:9px 11px;border-radius:9px;font-size:12px}
+nav a:hover{background:rgba(0,123,255,.12);color:#fff}
+.roulette-link{border:1px solid rgba(94,239,255,.45);background:rgba(0,123,255,.12);color:#fff!important;font-weight:800}
+.hero{padding:70px 0 55px;text-align:center}
 .eyebrow{color:var(--cyan);font-size:11px;letter-spacing:3px;text-transform:uppercase}
-h2{font-size:clamp(30px,4vw,44px);margin:8px 0}
+h1{font-size:clamp(40px,6vw,70px);margin:10px 0;line-height:.98}
+h1 span{color:var(--blue)}
+.hero p{max-width:680px;margin:18px auto;color:var(--muted);line-height:1.7}
+.actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:22px}
+.btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;color:#fff;padding:13px 18px;border-radius:11px;border:1px solid #159cff;background:linear-gradient(135deg,#078aff,#0347a2);font-weight:800;font-size:12px}
+.btn.alt{background:transparent;border-color:rgba(255,255,255,.18)}
+.section{padding:55px 0}
+.section-title{margin-bottom:22px}
+.section-title h2{font-size:clamp(28px,4vw,42px);margin:7px 0}
 .section-title p{color:var(--muted);line-height:1.6}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px;margin-top:28px}
-.card{
-  padding:23px;border:1px solid var(--line);border-radius:17px;
-  background:linear-gradient(145deg,rgba(8,24,43,.9),rgba(2,7,14,.9));
-  transition:.25s
-}
-.card:hover{transform:translateY(-4px);box-shadow:0 12px 35px rgba(0,123,255,.12)}
-.icon{font-size:32px;margin-bottom:12px}
-.card h3{margin-bottom:8px}.card p{color:var(--muted);line-height:1.55;font-size:14px}
-.price{display:block;margin-top:15px;color:#5eefff;font-weight:800;font-size:20px}
-
-.banner{
-  border:1px solid var(--line);border-radius:20px;padding:38px;
-  background:linear-gradient(100deg,rgba(0,86,180,.22),rgba(4,13,26,.9));
-  display:flex;align-items:center;justify-content:space-between;gap:20px
-}
-.banner h2{margin:0}.banner p{color:var(--muted);margin-top:8px}
-
-footer{border-top:1px solid var(--line);padding:35px 0;color:var(--muted);text-align:center}
+.category-nav{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0}
+.category-nav a{padding:9px 13px;border:1px solid var(--line);border-radius:999px;background:rgba(4,17,31,.72);color:#cfe0f2;text-decoration:none;font-size:12px}
+.category-nav a:hover{border-color:var(--cyan);color:#fff}
+.category{margin-top:35px;scroll-margin-top:90px}
+.category h3{font-size:24px;margin-bottom:5px}
+.category-desc{color:var(--muted);font-size:13px;margin-bottom:15px}
+.subcategories{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.item{padding:18px;border:1px solid var(--line);border-radius:15px;background:linear-gradient(145deg,rgba(8,24,43,.88),rgba(2,7,14,.9));min-height:90px}
+.item strong{display:block;font-size:14px;margin-bottom:7px}
+.item span{color:var(--muted);font-size:12px;line-height:1.4}
+.discount{margin-top:55px;padding:25px;border:1px solid rgba(94,239,255,.35);border-radius:20px;background:linear-gradient(120deg,rgba(0,86,180,.18),rgba(4,13,26,.9))}
+.discount h2{margin:5px 0 8px}.discount p{color:var(--muted);line-height:1.6}
+.notice{margin-top:15px;color:#9cefff;font-size:12px}
+footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);text-align:center}
 footer strong{color:#fff;letter-spacing:4px}
-
-@media(max-width:850px){
-  .nav{padding:10px 0;align-items:flex-start;flex-direction:column}
-  nav{overflow:auto;flex-wrap:nowrap;width:100%}
-  .hero{grid-template-columns:1fr;padding-top:42px}
-  .avatar-card{min-height:520px}
-  .grid{grid-template-columns:1fr}
-  .banner{flex-direction:column;align-items:flex-start}
-}
-
-.avatar-card{
-  min-height:560px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  position:relative;
-  isolation:isolate;
-}
-.avatar-card .avatar-glow{
-  position:absolute;inset:15%;
-  border-radius:50%;
-  background:radial-gradient(circle,rgba(0,150,255,.28),transparent 65%);
-  filter:blur(22px);z-index:-1;
-}
-.avatar-card .lyra-sheet{
-  width:100%;
-  height:100%;
-  min-height:560px;
-  object-fit:cover;
-  object-position:center;
-  display:block;
-  border-radius:24px;
-  filter:saturate(1.05) contrast(1.03);
-  position:relative;z-index:1;
-}
-.avatar-card .avatar-label{
-  position:absolute;bottom:18px;left:50%;
-  transform:translateX(-50%);
-  padding:9px 15px;border:1px solid #19bfff;
-  border-radius:999px;background:rgba(2,8,18,.82);
-  color:#fff;font-size:11px;font-weight:800;
-  letter-spacing:2px;white-space:nowrap;
-  box-shadow:0 0 20px rgba(0,123,255,.3);
-}
-@media(max-width:850px){
-  .avatar-card{min-height:500px}
-  .avatar-card .lyra-sheet{min-height:500px}
-}
-
-
-/* ===== MARYNEL · FUNCIONES DE VENTA ===== */
-.search-wrap{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
-.search-input{flex:1;min-width:220px;padding:15px 17px;border-radius:12px;border:1px solid var(--line);background:rgba(2,10,20,.82);color:#fff;outline:none;font-size:14px}
-.search-input::placeholder{color:#7f96b2}.search-input:focus{border-color:#18d8ff;box-shadow:0 0 0 3px rgba(24,216,255,.08)}
-.filters{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
-.filter-btn{padding:9px 13px;border:1px solid rgba(24,183,255,.25);border-radius:999px;background:rgba(4,17,31,.72);color:#b9cbe0;cursor:pointer;font-size:12px}
-.filter-btn.active,.filter-btn:hover{border-color:#18d8ff;color:#fff;background:rgba(0,123,255,.16)}
-.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px;margin-top:25px}
-.product-card{position:relative;padding:20px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(145deg,rgba(8,24,43,.95),rgba(2,7,14,.94));overflow:hidden}
-.product-card .product-icon{height:145px;display:grid;place-items:center;font-size:64px;border-radius:14px;background:radial-gradient(circle at 50% 35%,rgba(0,150,255,.18),transparent 60%),rgba(0,0,0,.14);margin-bottom:16px}
-.product-card h3{margin-bottom:6px}.product-card p{color:var(--muted);font-size:13px;line-height:1.5}.product-price{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:15px 0}.product-price strong{font-size:21px;color:#5eefff}.stock{font-size:11px;padding:6px 9px;border-radius:999px;border:1px solid rgba(94,239,255,.25);color:#9cefff}.stock.low{color:#ffd77a;border-color:rgba(255,215,122,.3)}.stock.out{color:#ff8e9a;border-color:rgba(255,100,120,.3)}
-.card-actions{display:flex;gap:8px}.mini-btn{flex:1;padding:11px 10px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:transparent;color:#fff;cursor:pointer;font-weight:700;font-size:12px}.mini-btn.buy{border-color:#159cff;background:linear-gradient(135deg,#078aff,#0347a2)}.mini-btn:hover{transform:translateY(-1px)}
-.favorite{position:absolute;top:16px;right:16px;width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.15);background:rgba(2,8,18,.72);color:#fff;cursor:pointer;font-size:18px}.favorite.active{color:#ff6f9b;border-color:rgba(255,111,155,.45)}
-.empty{padding:30px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:16px;margin-top:18px;display:none}
-.promo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px;margin-top:25px}.promo{padding:22px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(145deg,rgba(0,86,180,.22),rgba(4,13,26,.92))}.promo .tag{display:inline-block;font-size:10px;letter-spacing:2px;color:#5eefff;margin-bottom:10px}.promo h3{margin-bottom:8px}.promo p{color:var(--muted);font-size:13px;line-height:1.5;margin-bottom:14px}
-.floating-wa{position:fixed;right:18px;bottom:18px;z-index:80;border:1px solid rgba(120,255,190,.35);background:rgba(4,24,20,.94);color:#fff;text-decoration:none;padding:13px 16px;border-radius:999px;box-shadow:0 10px 30px rgba(0,0,0,.35);font-weight:800;font-size:12px}
-.modal{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.72);display:none;align-items:center;justify-content:center;padding:20px}.modal.show{display:flex}.modal-box{width:min(460px,100%);border:1px solid var(--line);border-radius:20px;background:linear-gradient(145deg,#08192e,#020811);padding:24px;box-shadow:0 25px 80px rgba(0,0,0,.55)}.modal-box h3{font-size:24px;margin-bottom:8px}.modal-box p{color:var(--muted);line-height:1.5;margin-bottom:18px}.modal-row{display:flex;gap:10px}.modal-row input{flex:1;padding:13px;border-radius:10px;border:1px solid var(--line);background:#030a14;color:#fff}.close-modal{float:right;border:0;background:transparent;color:#9fb2c8;font-size:22px;cursor:pointer}
-@media(max-width:850px){.product-grid,.promo-grid{grid-template-columns:1fr}.floating-wa{right:12px;bottom:12px}.product-card .product-icon{height:125px}}
-
-
-/* ===== MARYNEL · TIENDA AVANZADA ===== */
-.store-toolbar{display:flex;gap:10px;align-items:center;margin-top:22px;flex-wrap:wrap}
-.store-toolbar .search-wrap{flex:1;margin-top:0}
-.admin-toggle,.cart-button{padding:14px 16px;border-radius:12px;border:1px solid var(--line);background:rgba(4,17,31,.85);color:#fff;cursor:pointer;font-weight:800}
-.cart-button{border-color:#18d8ff}
-#cartCount{display:inline-grid;place-items:center;min-width:22px;height:22px;border-radius:50%;background:#087cff;margin-left:5px}
-.product-card{transition:.25s}
-.product-card:hover{transform:translateY(-5px);box-shadow:0 18px 45px rgba(0,123,255,.16)}
-.product-card.featured{border-color:rgba(94,239,255,.55)}
-.product-image{height:190px;display:grid;place-items:center;border-radius:14px;overflow:hidden;margin-bottom:14px;background:radial-gradient(circle at 50% 35%,rgba(0,150,255,.2),transparent 60%),rgba(0,0,0,.16)}
-.product-image img{width:100%;height:100%;object-fit:cover;display:block}
-.product-image span{font-size:72px}
-.product-category{font-size:10px;text-transform:uppercase;letter-spacing:2px;color:#5eefff;margin-bottom:7px}
-.featured-badge,.promo-badge{position:absolute;top:12px;left:12px;padding:6px 9px;border-radius:999px;font-size:9px;font-weight:900;background:rgba(2,8,18,.88);border:1px solid #5eefff;color:#5eefff;z-index:2}
-.promo-badge{left:auto;right:12px;color:#ffd77a;border-color:rgba(255,215,122,.45)}
-.admin-panel{display:none;margin-top:30px;padding:25px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(145deg,rgba(8,24,43,.98),rgba(2,7,14,.98))}
-.admin-panel.show{display:block}
-.admin-head{display:flex;justify-content:space-between;gap:20px;margin-bottom:20px}
-.admin-head h3{font-size:24px;margin:5px 0}.admin-head p{color:var(--muted);font-size:13px;line-height:1.5}
-.close-admin{background:transparent;border:0;color:#fff;font-size:28px;cursor:pointer}
-.product-form{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-.product-form label{display:flex;flex-direction:column;gap:7px;color:#cfe0f2;font-size:12px;font-weight:700}
-.product-form input,.product-form select,.product-form textarea{font:inherit;padding:12px;border-radius:10px;border:1px solid rgba(24,183,255,.3);background:#030a14;color:#fff;outline:none}
-.product-form textarea{resize:vertical}.product-form input:focus,.product-form select:focus,.product-form textarea:focus{border-color:#18d8ff}
-.product-form .wide{grid-column:1/-1}
-.upload-label{padding:12px;border:1px dashed rgba(24,183,255,.35);border-radius:12px;background:rgba(0,123,255,.05)}
-.check-line{display:flex!important;flex-direction:row!important;align-items:center;gap:8px!important}
-.check-line input{width:17px;height:17px}
-.form-actions{display:flex;gap:10px}
-.admin-list{margin-top:25px;border-top:1px solid rgba(24,183,255,.18)}
-.admin-item{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.08)}
-.admin-item strong{display:block}.admin-item small{display:block;color:var(--muted);margin-top:4px}
-.admin-actions{display:flex;gap:7px}.admin-actions button{border:1px solid rgba(255,255,255,.15);background:transparent;color:#fff;padding:8px 10px;border-radius:9px;cursor:pointer}
-.prize-card{position:relative}.prize-card h3{font-size:21px}
-#toast{position:fixed;left:50%;bottom:25px;transform:translate(-50%,20px);opacity:0;pointer-events:none;z-index:200;padding:13px 18px;border:1px solid #18d8ff;border-radius:12px;background:rgba(2,9,19,.95);color:#fff;box-shadow:0 12px 40px rgba(0,0,0,.4);transition:.25s;font-weight:700;font-size:13px}
-#toast.show{opacity:1;transform:translate(-50%,0)}
-button:disabled{opacity:.45;cursor:not-allowed}
-@media(max-width:700px){
-  .product-form{grid-template-columns:1fr}
-  .product-form .wide{grid-column:auto}
-  .store-toolbar{align-items:stretch}.admin-toggle,.cart-button{flex:1}
-  .product-image{height:165px}
-  .admin-item{align-items:flex-start;flex-direction:column}
-  .admin-actions{width:100%}.admin-actions button{flex:1}
-}
-
-
-/* ===== RULETA MARYNEL ===== */
-.roulette-nav{
-  color:#fff!important;
-  border:1px solid rgba(94,239,255,.5);
-  background:rgba(0,123,255,.13);
-  font-weight:900!important;
-  box-shadow:0 0 18px rgba(0,123,255,.10);
-}
-.roulette-nav:hover{background:rgba(0,123,255,.28)!important;color:#fff!important}
-.roulette-banner{
-  display:flex;align-items:center;gap:28px;padding:30px;
-  border:1px solid rgba(24,216,255,.48);border-radius:24px;
-  background:
-    radial-gradient(circle at 15% 50%,rgba(0,150,255,.24),transparent 30%),
-    linear-gradient(120deg,rgba(4,31,61,.96),rgba(2,7,16,.96));
-  box-shadow:0 20px 60px rgba(0,0,0,.32),0 0 35px rgba(0,123,255,.10);
-}
-.roulette-icon{
-  width:105px;height:105px;flex:0 0 105px;border-radius:50%;
-  display:grid;place-items:center;font-size:55px;
-  background:radial-gradient(circle,#123f69,#020812 68%);
-  border:1px solid #18d8ff;
-  box-shadow:0 0 35px rgba(0,216,255,.22);
-}
-.roulette-content h2{margin:6px 0 8px}
-.roulette-content p{color:var(--muted);line-height:1.6;max-width:700px}
-.roulette-content small{display:block;color:#7590ac;margin-top:12px}
-.roulette-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
-.roulette-main-btn{text-decoration:none;display:inline-flex;align-items:center;justify-content:center}
-.floating-roulette{
-  position:fixed;right:18px;bottom:70px;z-index:80;
-  color:#fff;text-decoration:none;padding:12px 15px;border-radius:999px;
-  border:1px solid rgba(94,239,255,.55);
-  background:rgba(2,18,35,.95);font-size:12px;font-weight:900;
-  box-shadow:0 10px 30px rgba(0,0,0,.35);
-}
-.floating-roulette:hover{transform:translateY(-2px)}
-@media(max-width:700px){
-  .roulette-banner{flex-direction:column;text-align:center;padding:24px}
-  .roulette-actions{justify-content:center}
-  .roulette-nav{border:0;background:transparent}
-}
-
+@media(max-width:850px){.nav{align-items:flex-start;flex-direction:column;padding:10px 0}nav{overflow:auto;flex-wrap:nowrap;width:100%}.subcategories{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:500px){.subcategories{grid-template-columns:1fr}.hero{padding-top:50px}}
 </style>
-
-<style>
-.lyra-fallback{
-  width:min(100%,420px);height:520px;border-radius:24px;
-  display:grid;place-items:center;position:relative;overflow:hidden;
-  color:#fff;font-weight:800;letter-spacing:5px;font-size:24px;
-  background:
-    radial-gradient(circle at 50% 30%,rgba(24,216,255,.30),transparent 28%),
-    linear-gradient(145deg,#0b2747,#020712 70%);
-  border:1px solid rgba(24,183,255,.45);
-  box-shadow:0 20px 60px rgba(0,0,0,.45),0 0 35px rgba(0,123,255,.18);
-}
-</style>
-
 </head>
-
 <body>
 <header>
   <div class="container nav">
     <a class="brand" href="#inicio"><div class="logo"><b>M</b></div><span>MARYNEL</span></a>
     <nav>
       <a href="#inicio">INICIO</a>
-      <a class="roulette-nav" href="https://danny941117-byte.github.io/Ruleta-marynel-premios/" target="_blank" rel="noopener">🎡 RULETA MARYNEL</a>
-      <a href="#productos">PRODUCTOS</a>
-      <a href="#promociones">PROMOCIONES</a>
-      <a href="#avatar">LYRA X7</a>
+      <a href="#catalogo">CATÁLOGO</a>
+      <a href="#descuentos">DESCUENTOS</a>
+      <a class="roulette-link" href="https://danny941117-byte.github.io/Ruleta-marynel-premios/" target="_blank" rel="noopener">🎡 RULETA MARYNEL</a>
       <a href="#contacto">CONTACTO</a>
     </nav>
   </div>
 </header>
 
 <main>
-<section class="container hero" id="inicio">
-  <div>
-    <div class="kicker">INNOVACIÓN • MOVIMIENTO • FUTURO</div>
-    <h1>TODO LO QUE<br>NECESITAS ESTÁ EN <span>MARYNEL</span></h1>
-    <p>Una nueva experiencia digital para descubrir productos, promociones y la identidad futurista de MARYNEL.</p>
-    <div class="buttons">
-      <a class="btn" href="#productos">VER PRODUCTOS</a>
-      <a class="btn alt" href="#avatar">CONOCE A LYRA X7</a>
-    </div>
-  </div>
-
-  <div class="avatar-card" id="avatar">
-    <div class="avatar-glow"></div>
-    <div class="lyra-fallback" role="img" aria-label="LYRA X7">LYRA X7</div>
+<section class="hero container" id="inicio">
+  <div class="eyebrow">INNOVACIÓN • MOVIMIENTO • FUTURO</div>
+  <h1>CATÁLOGO <span>MARYNEL</span></h1>
+  <p>Consulta nuestras categorías, productos disponibles y descuentos. El catálogo quedará preparado para conectarse posteriormente con Firebase.</p>
+  <div class="actions">
+    <a class="btn" href="#catalogo">VER CATÁLOGO</a>
+    <a class="btn alt" href="https://danny941117-byte.github.io/Ruleta-marynel-premios/" target="_blank" rel="noopener">🎡 ABRIR RULETA MARYNEL</a>
   </div>
 </section>
 
-
-
-
-<section class="container section" id="productos">
+<section class="container section" id="catalogo">
   <div class="section-title">
-    <div class="eyebrow">CATÁLOGO DIGITAL</div>
-    <h2>Productos MARYNEL</h2>
-    <p>Busca, filtra, agrega al carrito y envía tu pedido directamente por WhatsApp.</p>
+    <div class="eyebrow">CATÁLOGO DE PRODUCTOS</div>
+    <h2>Categorías</h2>
+    <p>Los productos reales se mostrarán aquí cuando el catálogo sea conectado con Firebase.</p>
   </div>
 
-  <div class="store-toolbar">
-    <div class="search-wrap">
-      <input id="productSearch" class="search-input" type="search"
-        placeholder="🔎 Buscar producto..." aria-label="Buscar producto">
+  <div class="category-nav">
+    <a href="#ropa">Ropa / Moda</a>
+    <a href="#calzado">Calzado</a>
+    <a href="#accesorios">Accesorios</a>
+    <a href="#telefonos">Teléfonos</a>
+    <a href="#relojes">Relojes</a>
+    <a href="#otros">Otros</a>
+  </div>
+
+  <article class="category" id="ropa">
+    <h3>👕 Ropa / Moda</h3>
+    <p class="category-desc">Moda organizada por tipo de prenda.</p>
+    <div class="subcategories">
+      <div class="item"><strong>Lencería</strong><span>Productos de lencería.</span></div>
+      <div class="item"><strong>Blusas</strong><span>Blusas para dama.</span></div>
+      <div class="item"><strong>Pantalones hombre</strong><span>Pantalones para caballero.</span></div>
+      <div class="item"><strong>Pantalones mujer</strong><span>Pantalones para dama.</span></div>
+      <div class="item"><strong>Chumpas</strong><span>Chumpas y prendas exteriores.</span></div>
+      <div class="item"><strong>Sweater</strong><span>Sweaters y prendas abrigadoras.</span></div>
+      <div class="item"><strong>Camisetas</strong><span>Camisetas para diferentes estilos.</span></div>
     </div>
-    <button class="admin-toggle" id="adminToggle">⚙️ Administrar productos</button>
-    <button class="cart-button" id="openCart">🛒 Carrito <span id="cartCount">0</span></button>
-  </div>
+  </article>
 
-  <div class="filters" id="filters">
-    <button class="filter-btn active" data-category="Todos">Todos</button>
-    <button class="filter-btn" data-category="Moda">Moda</button>
-    <button class="filter-btn" data-category="Tecnología">Tecnología</button>
-    <button class="filter-btn" data-category="Accesorios">Accesorios</button>
-    <button class="filter-btn" data-category="Perfumes">Perfumes</button>
-    <button class="filter-btn" data-category="Otros">Otros</button>
-  </div>
-
-  <div class="product-grid" id="productGrid"></div>
-  <div class="empty" id="emptyProducts">No encontramos productos con esa búsqueda.</div>
-
-  <div class="admin-panel" id="adminPanel">
-    <div class="admin-head">
-      <div>
-        <span class="eyebrow">PANEL DE PRODUCTOS</span>
-        <h3>Agregar producto desde la página</h3>
-        <p>Los productos se guardan en este navegador. Puedes usar una imagen por URL o subirla desde tu teléfono.</p>
-      </div>
-      <button class="close-admin" id="closeAdmin">×</button>
+  <article class="category" id="calzado">
+    <h3>👟 Calzado</h3>
+    <p class="category-desc">Tipos de calzado y complementos.</p>
+    <div class="subcategories">
+      <div class="item"><strong>Deportivo</strong><span>Calzado deportivo.</span></div>
+      <div class="item"><strong>Casual</strong><span>Calzado para uso diario.</span></div>
+      <div class="item"><strong>Ejecutivo</strong><span>Calzado formal y ejecutivo.</span></div>
+      <div class="item"><strong>Calcetines y calcetas</strong><span>Complementos para calzado.</span></div>
     </div>
+  </article>
 
-    <form id="productForm" class="product-form">
-      <input type="hidden" id="editId">
-      <label>Nombre
-        <input id="pName" required placeholder="Ej. Blusa dama">
-      </label>
-      <label>Categoría
-        <select id="pCategory">
-          <option>Moda</option><option>Tecnología</option><option>Accesorios</option>
-          <option>Perfumes</option><option>Otros</option>
-        </select>
-      </label>
-      <label>Precio (Q)
-        <input id="pPrice" type="number" min="0" step="0.01" required placeholder="79">
-      </label>
-      <label>Stock
-        <input id="pStock" type="number" min="0" step="1" value="1">
-      </label>
-      <label class="wide">Descripción
-        <textarea id="pDescription" rows="3" placeholder="Descripción del producto..."></textarea>
-      </label>
-      <label class="wide">Imagen por URL
-        <input id="pImage" type="url" placeholder="https://.../imagen.jpg">
-      </label>
-      <label class="wide upload-label">O subir imagen desde el dispositivo
-        <input id="pFile" type="file" accept="image/*">
-      </label>
-      <label class="check-line"><input id="pFeatured" type="checkbox"> ⭐ Producto destacado</label>
-      <label class="check-line"><input id="pPromo" type="checkbox"> 🔥 Mostrar como oferta</label>
-
-      <div class="form-actions wide">
-        <button class="mini-btn buy" type="submit">💾 Guardar producto</button>
-        <button class="mini-btn" type="button" id="cancelEdit">Limpiar</button>
-      </div>
-    </form>
-
-    <div class="admin-list" id="adminList"></div>
-  </div>
-</section>
-
-
-
-<section class="container section roulette-section" id="ruleta">
-  <div class="roulette-banner">
-    <div class="roulette-icon">🎡</div>
-    <div class="roulette-content">
-      <span class="eyebrow">PREMIOS MARYNEL</span>
-      <h2>¡Juega en la Ruleta MARYNEL!</h2>
-      <p>Participa y descubre si has ganado. Los premios desbloqueados se muestran exclusivamente dentro de la ruleta.</p>
-      <div class="roulette-actions">
-        <a class="btn roulette-main-btn" href="https://danny941117-byte.github.io/Ruleta-marynel-premios/" target="_blank" rel="noopener">
-          🎡 JUGAR RULETA
-        </a>
-        <button class="btn alt" type="button" onclick="scrollToPrizeInfo()">
-          🎁 VER PREMIOS
-        </button>
-      </div>
-      <small>La ruleta se abrirá en una nueva pestaña.</small>
+  <article class="category" id="accesorios">
+    <h3>👜 Accesorios</h3>
+    <p class="category-desc">Accesorios para caballero, dama y cabello.</p>
+    <div class="subcategories">
+      <div class="item"><strong>Gorras caballero</strong><span>Gorras para caballero.</span></div>
+      <div class="item"><strong>Gorras dama</strong><span>Gorras para dama.</span></div>
+      <div class="item"><strong>Cadenas</strong><span>Cadenas y accesorios.</span></div>
+      <div class="item"><strong>Aretes</strong><span>Aretes y accesorios.</span></div>
+      <div class="item"><strong>Gafas</strong><span>Gafas y complementos.</span></div>
+      <div class="item"><strong>Ganchos cabello</strong><span>Accesorios para el cabello.</span></div>
     </div>
-  </div>
-</section>
+  </article>
 
+  <article class="category" id="telefonos">
+    <h3>📱 Teléfonos</h3>
+    <p class="category-desc">Accesorios y complementos para teléfonos.</p>
+    <div class="subcategories">
+      <div class="item"><strong>Cristal templado</strong><span>Protección para pantalla.</span></div>
+      <div class="item"><strong>Audífonos con cable</strong><span>Audífonos alámbricos.</span></div>
+      <div class="item"><strong>Cargadores</strong><span>Cargadores para dispositivos.</span></div>
+      <div class="item"><strong>Cables USB</strong><span>Cables y conexiones USB.</span></div>
+      <div class="item"><strong>Audífonos Bluetooth</strong><span>Audio inalámbrico.</span></div>
+    </div>
+  </article>
 
-<section class="container section" id="promociones">
-  <div class="section-title">
-    <div class="eyebrow">PROMOCIONES MARYNEL</div>
-    <h2>Beneficios y ofertas</h2>
-    <p>Los premios de la ruleta son exclusivos de la Ruleta MARYNEL y no se muestran ni se reclaman desde esta tienda.</p>
-  </div>
+  <article class="category" id="relojes">
+    <h3>⌚ Relojes</h3>
+    <p class="category-desc">Relojes organizados por marca.</p>
+    <div class="subcategories">
+      <div class="item"><strong>Seiko</strong><span>Relojes Seiko.</span></div>
+      <div class="item"><strong>Raklo</strong><span>Relojes Raklo.</span></div>
+    </div>
+  </article>
 
-  <div class="promo-grid">
-    <article class="promo">
-      <span class="tag">🛍️ TIENDA</span>
-      <h3>Ofertas de productos</h3>
-      <p>Consulta los productos disponibles en nuestro catálogo y realiza tu pedido por WhatsApp.</p>
-      <a class="mini-btn buy" href="#productos" style="display:inline-flex;text-decoration:none;align-items:center;justify-content:center;">Ver catálogo</a>
-    </article>
+  <article class="category" id="otros">
+    <h3>📦 Otros</h3>
+    <p class="category-desc">Productos pendientes de definir y clasificar.</p>
+    <div class="subcategories">
+      <div class="item"><strong>Pendiente de detalles</strong><span>Esta sección queda preparada para agregar nuevas subcategorías.</span></div>
+    </div>
+  </article>
 
-    <article class="promo">
-      <span class="tag">🎡 RULETA</span>
-      <h3>Premios exclusivos</h3>
-      <p>Los premios desbloqueables únicamente aparecen dentro de la Ruleta MARYNEL.</p>
-      <a class="mini-btn buy" href="https://danny941117-byte.github.io/Ruleta-marynel-premios/" target="_blank" rel="noopener" style="display:inline-flex;text-decoration:none;align-items:center;justify-content:center;">Abrir ruleta</a>
-    </article>
-
-    <article class="promo">
-      <span class="tag">📲 WHATSAPP</span>
-      <h3>Atención directa</h3>
-      <p>Para consultas sobre productos, comunícate directamente con MARYNEL.</p>
-      <a class="mini-btn buy" href="https://wa.me/50248681178" target="_blank" rel="noopener" style="display:inline-flex;text-decoration:none;align-items:center;justify-content:center;">Contactar</a>
-    </article>
-  </div>
-</section>
-
-<section class="container section" id="confianza">
-  <div class="section-title">
-    <div class="eyebrow">COMPRA FÁCIL</div>
-    <h2>Todo listo para vender</h2>
-    <p>La página queda preparada para evolucionar después a un catálogo administrado con Firebase.</p>
-  </div>
-  <div class="grid">
-    <article class="card"><div class="icon">📦</div><h3>Catálogo</h3><p>Productos, precios y disponibilidad organizados para el cliente.</p></article>
-    <article class="card"><div class="icon">❤️</div><h3>Favoritos</h3><p>El visitante puede guardar productos que le interesen durante su visita.</p></article>
-    <article class="card"><div class="icon">📲</div><h3>Pedido rápido</h3><p>Un toque prepara el mensaje del producto para WhatsApp.</p></article>
-  </div>
+  <section class="discount" id="descuentos">
+    <div class="eyebrow">PROMOCIONES</div>
+    <h2>🏷️ Descuentos MARYNEL</h2>
+    <p>Los descuentos y promociones de productos se administrarán dentro del catálogo. Esta sección no contiene ni ejecuta código de la Ruleta MARYNEL.</p>
+    <div class="notice">Los premios de la ruleta pertenecen exclusivamente a la Ruleta MARYNEL.</div>
+  </section>
 </section>
 </main>
 
@@ -493,231 +184,5 @@ button:disabled{opacity:.45;cursor:not-allowed}
     <small>Innovación • Movimiento • Futuro</small>
   </div>
 </footer>
-
-<a id="floatingRoulette" class="floating-roulette" href="https://danny941117-byte.github.io/Ruleta-marynel-premios/" target="_blank" rel="noopener" aria-label="Abrir Ruleta MARYNEL">🎡 Jugar ruleta</a>
-
-<a id="floatingWhatsApp" class="floating-wa" href="#" aria-label="Contactar por WhatsApp">💬 WhatsApp</a>
-
-<div class="modal" id="orderModal" role="dialog" aria-modal="true" aria-labelledby="orderTitle">
-  <div class="modal-box">
-    <button class="close-modal" id="closeModal" aria-label="Cerrar">×</button>
-    <h3 id="orderTitle">Preparar pedido</h3>
-    <p id="orderDescription">Indica la cantidad y continuamos por WhatsApp.</p>
-    <div class="modal-row"><input id="quantity" type="number" min="1" value="1" aria-label="Cantidad"><button class="mini-btn buy" id="sendOrder">Enviar pedido</button></div>
-  </div>
-</div>
-
-
-<script>
-/* ===== MARYNEL · TIENDA DIGITAL ===== */
-const WHATSAPP_NUMBER = "50248681178";
-const STORE_KEY = "marynel_products_v3";
-const CART_KEY = "marynel_cart_v3";
-
-const seedProducts = [
-  {id:"p1",name:"Blusa MARYNEL",category:"Moda",price:79,stock:10,description:"Moda femenina seleccionada para tu catálogo.",image:"",featured:true,promo:false},
-  {id:"p2",name:"Audífonos Bluetooth",category:"Tecnología",price:99,stock:5,description:"Audio inalámbrico para uso diario.",image:"",featured:true,promo:false},
-  {id:"p3",name:"Vidrio templado",category:"Accesorios",price:25,stock:20,description:"Protección para teléfono. Consulta compatibilidad.",image:"",featured:false,promo:true},
-  {id:"p4",name:"Reloj",category:"Accesorios",price:125,stock:7,description:"Accesorio moderno para complementar tu estilo.",image:"",featured:false,promo:false},
-  {id:"p5",name:"Perfume",category:"Perfumes",price:150,stock:6,description:"Fragancias seleccionadas para diferentes estilos.",image:"",featured:false,promo:false},
-  {id:"p6",name:"Falda",category:"Moda",price:89,stock:4,description:"Diferentes largos y estilos para el catálogo.",image:"",featured:false,promo:true}
-];
-
-let products = JSON.parse(localStorage.getItem(STORE_KEY) || "null");
-if(!Array.isArray(products) || !products.length){ products = seedProducts; saveProducts(); }
-let cart = JSON.parse(localStorage.getItem(CART_KEY) || "[]");
-let activeCategory = "Todos";
-let selectedImageData = "";
-
-function saveProducts(){ localStorage.setItem(STORE_KEY, JSON.stringify(products)); }
-function saveCart(){ localStorage.setItem(CART_KEY, JSON.stringify(cart)); }
-
-function money(n){ return "Q" + Number(n).toFixed(2).replace(".00",""); }
-function waUrl(message){
-  return "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message);
-}
-function openWhatsApp(message){ window.open(waUrl(message), "_blank"); }
-
-function renderProducts(){
-  const term = document.getElementById("productSearch").value.toLowerCase().trim();
-  const grid = document.getElementById("productGrid");
-  const found = products.filter(p =>
-    (activeCategory==="Todos" || p.category===activeCategory) &&
-    (p.name.toLowerCase().includes(term) || (p.description||"").toLowerCase().includes(term))
-  );
-
-  grid.innerHTML = found.map(p => {
-    const stockText = p.stock<=0 ? "Agotado" : p.stock<=5 ? "Pocas unidades" : "Disponible";
-    const stockClass = p.stock<=0 ? "out" : p.stock<=5 ? "low" : "";
-    const image = p.image
-      ? `<img src="${p.image}" alt="${escapeHtml(p.name)}" onerror="this.parentElement.innerHTML='<span>📦</span>'">`
-      : `<span>${iconFor(p.category)}</span>`;
-    return `
-      <article class="product-card ${p.featured?"featured":""}">
-        ${p.featured ? '<div class="featured-badge">⭐ DESTACADO</div>':''}
-        ${p.promo ? '<div class="promo-badge">🔥 OFERTA</div>':''}
-        <button class="favorite" data-favorite="${p.id}" aria-label="Favorito">♡</button>
-        <div class="product-image">${image}</div>
-        <div class="product-category">${escapeHtml(p.category)}</div>
-        <h3>${escapeHtml(p.name)}</h3>
-        <p>${escapeHtml(p.description||"Producto MARYNEL")}</p>
-        <div class="product-price"><strong>${money(p.price)}</strong><span class="stock ${stockClass}">${stockText}</span></div>
-        <div class="card-actions">
-          <button class="mini-btn buy" data-add="${p.id}" ${p.stock<=0?"disabled":""}>🛒 Agregar</button>
-          <button class="mini-btn" data-order="${p.id}">📲 Pedir</button>
-        </div>
-      </article>`;
-  }).join("");
-
-  document.getElementById("emptyProducts").style.display = found.length ? "none" : "block";
-  updateCartCount();
-}
-
-function iconFor(cat){
-  return ({Moda:"👚",Tecnología:"🎧",Accesorios:"⌚",Perfumes:"🌸",Otros:"📦"})[cat] || "📦";
-}
-function escapeHtml(s){
-  return String(s).replace(/[&<>"']/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
-}
-
-document.getElementById("productSearch").addEventListener("input", renderProducts);
-document.querySelectorAll(".filter-btn").forEach(btn=>{
-  btn.addEventListener("click",()=>{
-    document.querySelectorAll(".filter-btn").forEach(b=>b.classList.remove("active"));
-    btn.classList.add("active");
-    activeCategory = btn.dataset.category;
-    renderProducts();
-  });
-});
-
-document.getElementById("productGrid").addEventListener("click", e=>{
-  const add = e.target.closest("[data-add]");
-  const order = e.target.closest("[data-order]");
-  const fav = e.target.closest("[data-favorite]");
-  if(add) addToCart(add.dataset.add);
-  if(order) quickOrder(order.dataset.order);
-  if(fav){ fav.classList.toggle("active"); fav.textContent=fav.classList.contains("active")?"♥":"♡"; }
-});
-
-function addToCart(id){
-  const p=products.find(x=>x.id===id); if(!p || p.stock<=0)return;
-  const item=cart.find(x=>x.id===id);
-  if(item) item.qty=Math.min(item.qty+1,p.stock); else cart.push({id,qty:1});
-  saveCart(); updateCartCount(); showToast("Producto agregado al carrito 🛒");
-}
-function quickOrder(id){
-  const p=products.find(x=>x.id===id); if(!p)return;
-  openWhatsApp(`Hola MARYNEL 👋%0A%0AQuiero pedir:%0AProducto: ${p.name}%0APrecio: ${money(p.price)}%0ACantidad: 1%0A%0A¿Me confirman disponibilidad?`);
-}
-function updateCartCount(){
-  document.getElementById("cartCount").textContent=cart.reduce((a,x)=>a+x.qty,0);
-}
-
-document.getElementById("openCart").addEventListener("click",()=>{
-  if(!cart.length){ showToast("Tu carrito está vacío 🛒"); return; }
-  const lines=cart.map(x=>{
-    const p=products.find(y=>y.id===x.id); return p ? `${p.name} — ${x.qty} x ${money(p.price)}` : "";
-  }).filter(Boolean);
-  const total=cart.reduce((sum,x)=>{const p=products.find(y=>y.id===x.id);return sum+(p?p.price*x.qty:0)},0);
-  openWhatsApp(`Hola MARYNEL 👋%0A%0AQuiero realizar este pedido:%0A${lines.join("%0A")}%0A%0ATotal estimado: ${money(total)}%0A%0A¿Me confirman disponibilidad?`);
-});
-
-document.getElementById("adminToggle").addEventListener("click",()=>{
-  document.getElementById("adminPanel").classList.toggle("show");
-  renderAdmin();
-});
-document.getElementById("closeAdmin").addEventListener("click",()=>document.getElementById("adminPanel").classList.remove("show"));
-document.getElementById("cancelEdit").addEventListener("click",clearForm);
-
-document.getElementById("pFile").addEventListener("change", e=>{
-  const file=e.target.files[0]; if(!file)return;
-  const reader=new FileReader();
-  reader.onload=()=>{selectedImageData=reader.result; showToast("Imagen cargada ✓");};
-  reader.readAsDataURL(file);
-});
-
-document.getElementById("productForm").addEventListener("submit",e=>{
-  e.preventDefault();
-  const id=document.getElementById("editId").value || "p_"+Date.now();
-  const existing=products.find(p=>p.id===id);
-  const image=document.getElementById("pImage").value.trim() || selectedImageData || (existing?existing.image:"");
-  const item={
-    id,
-    name:document.getElementById("pName").value.trim(),
-    category:document.getElementById("pCategory").value,
-    price:Number(document.getElementById("pPrice").value)||0,
-    stock:Number(document.getElementById("pStock").value)||0,
-    description:document.getElementById("pDescription").value.trim(),
-    image,
-    featured:document.getElementById("pFeatured").checked,
-    promo:document.getElementById("pPromo").checked
-  };
-  if(existing) products=products.map(p=>p.id===id?item:p); else products.unshift(item);
-  saveProducts(); clearForm(); renderProducts(); renderAdmin();
-  showToast(existing?"Producto actualizado ✓":"Producto agregado ✓");
-});
-
-function clearForm(){
-  document.getElementById("productForm").reset();
-  document.getElementById("editId").value="";
-  selectedImageData="";
-}
-function renderAdmin(){
-  document.getElementById("adminList").innerHTML=products.map(p=>`
-    <div class="admin-item">
-      <div><strong>${escapeHtml(p.name)}</strong><small>${escapeHtml(p.category)} · ${money(p.price)} · Stock ${p.stock}</small></div>
-      <div class="admin-actions">
-        <button data-edit="${p.id}">✏️ Editar</button>
-        <button data-delete="${p.id}">🗑️ Eliminar</button>
-      </div>
-    </div>`).join("");
-}
-document.getElementById("adminList").addEventListener("click",e=>{
-  const edit=e.target.closest("[data-edit]"); const del=e.target.closest("[data-delete]");
-  if(edit){
-    const p=products.find(x=>x.id===edit.dataset.edit); if(!p)return;
-    document.getElementById("editId").value=p.id;
-    document.getElementById("pName").value=p.name;
-    document.getElementById("pCategory").value=p.category;
-    document.getElementById("pPrice").value=p.price;
-    document.getElementById("pStock").value=p.stock;
-    document.getElementById("pDescription").value=p.description||"";
-    document.getElementById("pImage").value=p.image && !p.image.startsWith("data:") ? p.image : "";
-    document.getElementById("pFeatured").checked=!!p.featured;
-    document.getElementById("pPromo").checked=!!p.promo;
-    document.getElementById("adminPanel").scrollIntoView({behavior:"smooth"});
-  }
-  if(del){
-    if(confirm("¿Eliminar este producto?")){
-      products=products.filter(x=>x.id!==del.dataset.delete); saveProducts(); renderProducts(); renderAdmin(); showToast("Producto eliminado");
-    }
-  }
-});
-
-
-function showToast(msg){
-  let t=document.getElementById("toast");
-  if(!t){t=document.createElement("div");t.id="toast";document.body.appendChild(t);}
-  t.textContent=msg;t.classList.add("show");clearTimeout(window.toastTimer);
-  window.toastTimer=setTimeout(()=>t.classList.remove("show"),2200);
-}
-
-document.getElementById("floatingWhatsApp").addEventListener("click",e=>{
-  e.preventDefault(); openWhatsApp("Hola MARYNEL 👋 Quiero información sobre sus productos y promociones.");
-});
-
-renderProducts();
-renderAdmin();
-</script>
-
-
-
-<script>
-function scrollToPrizeInfo(){
-  const el=document.getElementById("promociones");
-  if(el) el.scrollIntoView({behavior:"smooth",block:"start"});
-}
-</script>
-
 </body>
 </html>
