@@ -177,6 +177,26 @@ footer strong{color:#fff;letter-spacing:4px}
   .avatar-card .lyra-sheet{min-height:500px}
 }
 
+
+/* ===== MARYNEL · FUNCIONES DE VENTA ===== */
+.search-wrap{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+.search-input{flex:1;min-width:220px;padding:15px 17px;border-radius:12px;border:1px solid var(--line);background:rgba(2,10,20,.82);color:#fff;outline:none;font-size:14px}
+.search-input::placeholder{color:#7f96b2}.search-input:focus{border-color:#18d8ff;box-shadow:0 0 0 3px rgba(24,216,255,.08)}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.filter-btn{padding:9px 13px;border:1px solid rgba(24,183,255,.25);border-radius:999px;background:rgba(4,17,31,.72);color:#b9cbe0;cursor:pointer;font-size:12px}
+.filter-btn.active,.filter-btn:hover{border-color:#18d8ff;color:#fff;background:rgba(0,123,255,.16)}
+.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px;margin-top:25px}
+.product-card{position:relative;padding:20px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(145deg,rgba(8,24,43,.95),rgba(2,7,14,.94));overflow:hidden}
+.product-card .product-icon{height:145px;display:grid;place-items:center;font-size:64px;border-radius:14px;background:radial-gradient(circle at 50% 35%,rgba(0,150,255,.18),transparent 60%),rgba(0,0,0,.14);margin-bottom:16px}
+.product-card h3{margin-bottom:6px}.product-card p{color:var(--muted);font-size:13px;line-height:1.5}.product-price{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:15px 0}.product-price strong{font-size:21px;color:#5eefff}.stock{font-size:11px;padding:6px 9px;border-radius:999px;border:1px solid rgba(94,239,255,.25);color:#9cefff}.stock.low{color:#ffd77a;border-color:rgba(255,215,122,.3)}.stock.out{color:#ff8e9a;border-color:rgba(255,100,120,.3)}
+.card-actions{display:flex;gap:8px}.mini-btn{flex:1;padding:11px 10px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:transparent;color:#fff;cursor:pointer;font-weight:700;font-size:12px}.mini-btn.buy{border-color:#159cff;background:linear-gradient(135deg,#078aff,#0347a2)}.mini-btn:hover{transform:translateY(-1px)}
+.favorite{position:absolute;top:16px;right:16px;width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.15);background:rgba(2,8,18,.72);color:#fff;cursor:pointer;font-size:18px}.favorite.active{color:#ff6f9b;border-color:rgba(255,111,155,.45)}
+.empty{padding:30px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:16px;margin-top:18px;display:none}
+.promo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px;margin-top:25px}.promo{padding:22px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(145deg,rgba(0,86,180,.22),rgba(4,13,26,.92))}.promo .tag{display:inline-block;font-size:10px;letter-spacing:2px;color:#5eefff;margin-bottom:10px}.promo h3{margin-bottom:8px}.promo p{color:var(--muted);font-size:13px;line-height:1.5;margin-bottom:14px}
+.floating-wa{position:fixed;right:18px;bottom:18px;z-index:80;border:1px solid rgba(120,255,190,.35);background:rgba(4,24,20,.94);color:#fff;text-decoration:none;padding:13px 16px;border-radius:999px;box-shadow:0 10px 30px rgba(0,0,0,.35);font-weight:800;font-size:12px}
+.modal{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.72);display:none;align-items:center;justify-content:center;padding:20px}.modal.show{display:flex}.modal-box{width:min(460px,100%);border:1px solid var(--line);border-radius:20px;background:linear-gradient(145deg,#08192e,#020811);padding:24px;box-shadow:0 25px 80px rgba(0,0,0,.55)}.modal-box h3{font-size:24px;margin-bottom:8px}.modal-box p{color:var(--muted);line-height:1.5;margin-bottom:18px}.modal-row{display:flex;gap:10px}.modal-row input{flex:1;padding:13px;border-radius:10px;border:1px solid var(--line);background:#030a14;color:#fff}.close-modal{float:right;border:0;background:transparent;color:#9fb2c8;font-size:22px;cursor:pointer}
+@media(max-width:850px){.product-grid,.promo-grid{grid-template-columns:1fr}.floating-wa{right:12px;bottom:12px}.product-card .product-icon{height:125px}}
+
 </style>
 </head>
 
@@ -216,41 +236,84 @@ footer strong{color:#fff;letter-spacing:4px}
 
 <section class="container section" id="productos">
   <div class="section-title">
-    <div class="eyebrow">Explora MARYNEL</div>
-    <h2>Categorías</h2>
-    <p>La estructura queda lista para conectar el catálogo dinámico con Firebase.</p>
+    <div class="eyebrow">CATÁLOGO MARYNEL</div>
+    <h2>Encuentra lo que buscas</h2>
+    <p>Busca productos, revisa disponibilidad y envía tu pedido directamente por WhatsApp.</p>
   </div>
-  <div class="grid">
-    <article class="card"><div class="icon">👗</div><h3>Moda</h3><p>Blusas, faldas, vestidos y más.</p></article>
-    <article class="card"><div class="icon">👟</div><h3>Calzado</h3><p>Estilos casuales y productos para cada ocasión.</p></article>
-    <article class="card"><div class="icon">🎧</div><h3>Tecnología</h3><p>Audífonos, accesorios y productos tecnológicos.</p></article>
-    <article class="card"><div class="icon">⌚</div><h3>Accesorios</h3><p>Relojes, gorras, bolsos y complementos.</p></article>
-    <article class="card"><div class="icon">🌸</div><h3>Perfumes</h3><p>Fragancias y productos seleccionados.</p></article>
-    <article class="card"><div class="icon">🎁</div><h3>Promociones</h3><p>Ofertas especiales y productos destacados.</p></article>
+  <div class="search-wrap">
+    <input id="productSearch" class="search-input" type="search" placeholder="🔎 Buscar producto..." aria-label="Buscar producto">
   </div>
+  <div class="filters" id="filters">
+    <button class="filter-btn active" data-category="Todos">Todos</button>
+    <button class="filter-btn" data-category="Moda">Moda</button>
+    <button class="filter-btn" data-category="Tecnología">Tecnología</button>
+    <button class="filter-btn" data-category="Accesorios">Accesorios</button>
+    <button class="filter-btn" data-category="Perfumes">Perfumes</button>
+  </div>
+  <div class="product-grid" id="productGrid">
+    <article class="product-card" data-category="Moda" data-name="Blusa MARYNEL" data-price="79">
+      <button class="favorite" aria-label="Agregar a favoritos">♡</button><div class="product-icon">👚</div>
+      <h3>Blusa MARYNEL</h3><p>Moda femenina seleccionada para tu catálogo.</p>
+      <div class="product-price"><strong>Q79</strong><span class="stock">Disponible</span></div>
+      <div class="card-actions"><button class="mini-btn buy" data-product="Blusa MARYNEL" data-price="Q79">Pedir</button><button class="mini-btn" data-fav-text>♡ Favorito</button></div>
+    </article>
+    <article class="product-card" data-category="Tecnología" data-name="Audífonos Bluetooth" data-price="99">
+      <button class="favorite" aria-label="Agregar a favoritos">♡</button><div class="product-icon">🎧</div>
+      <h3>Audífonos Bluetooth</h3><p>Audio inalámbrico para uso diario.</p>
+      <div class="product-price"><strong>Q99</strong><span class="stock low">Pocas unidades</span></div>
+      <div class="card-actions"><button class="mini-btn buy" data-product="Audífonos Bluetooth" data-price="Q99">Pedir</button><button class="mini-btn" data-fav-text>♡ Favorito</button></div>
+    </article>
+    <article class="product-card" data-category="Accesorios" data-name="Vidrio templado" data-price="25">
+      <button class="favorite" aria-label="Agregar a favoritos">♡</button><div class="product-icon">📱</div>
+      <h3>Vidrio templado</h3><p>Protección para teléfono. Consulta compatibilidad.</p>
+      <div class="product-price"><strong>Q25</strong><span class="stock">Disponible</span></div>
+      <div class="card-actions"><button class="mini-btn buy" data-product="Vidrio templado" data-price="Q25">Pedir</button><button class="mini-btn" data-fav-text>♡ Favorito</button></div>
+    </article>
+    <article class="product-card" data-category="Accesorios" data-name="Reloj" data-price="125">
+      <button class="favorite" aria-label="Agregar a favoritos">♡</button><div class="product-icon">⌚</div>
+      <h3>Reloj</h3><p>Accesorio moderno para complementar tu estilo.</p>
+      <div class="product-price"><strong>Q125</strong><span class="stock">Disponible</span></div>
+      <div class="card-actions"><button class="mini-btn buy" data-product="Reloj" data-price="Q125">Pedir</button><button class="mini-btn" data-fav-text>♡ Favorito</button></div>
+    </article>
+    <article class="product-card" data-category="Perfumes" data-name="Perfume" data-price="150">
+      <button class="favorite" aria-label="Agregar a favoritos">♡</button><div class="product-icon">🌸</div>
+      <h3>Perfume</h3><p>Fragancias seleccionadas para diferentes estilos.</p>
+      <div class="product-price"><strong>Q150</strong><span class="stock">Disponible</span></div>
+      <div class="card-actions"><button class="mini-btn buy" data-product="Perfume" data-price="Q150">Pedir</button><button class="mini-btn" data-fav-text>♡ Favorito</button></div>
+    </article>
+    <article class="product-card" data-category="Moda" data-name="Falda" data-price="89">
+      <button class="favorite" aria-label="Agregar a favoritos">♡</button><div class="product-icon">👗</div>
+      <h3>Falda</h3><p>Diferentes largos y estilos para el catálogo.</p>
+      <div class="product-price"><strong>Q89</strong><span class="stock low">Pocas unidades</span></div>
+      <div class="card-actions"><button class="mini-btn buy" data-product="Falda" data-price="Q89">Pedir</button><button class="mini-btn" data-fav-text>♡ Favorito</button></div>
+    </article>
+  </div>
+  <div class="empty" id="emptyProducts">No encontramos productos con esa búsqueda.</div>
 </section>
 
 <section class="container section" id="promociones">
-  <div class="banner">
-    <div>
-      <div class="eyebrow">MARYNEL</div>
-      <h2>Promociones exclusivas</h2>
-      <p>Descuentos, combos y ofertas especiales.</p>
-    </div>
-    <a class="btn" href="#contacto">VER PROMOCIONES</a>
+  <div class="section-title">
+    <div class="eyebrow">OFERTAS MARYNEL</div>
+    <h2>Promociones exclusivas</h2>
+    <p>Espacio preparado para mostrar tus descuentos, combos y premios.</p>
+  </div>
+  <div class="promo-grid">
+    <article class="promo"><span class="tag">DESCUENTO</span><h3>Ofertas especiales</h3><p>Publica aquí tus productos con precio promocional y llamada directa a WhatsApp.</p><button class="mini-btn buy" data-product="Promoción especial" data-price="Consultar">Consultar oferta</button></article>
+    <article class="promo"><span class="tag">COMBOS</span><h3>Combos MARYNEL</h3><p>Ideal para vender varios productos juntos y aumentar el valor del pedido.</p><button class="mini-btn buy" data-product="Combo MARYNEL" data-price="Consultar">Consultar combo</button></article>
+    <article class="promo"><span class="tag">🎁 PREMIOS</span><h3>Reclama tu premio</h3><p>Si ganaste en la ruleta, podrás solicitar tu premio directamente por WhatsApp.</p><button class="mini-btn buy" data-product="Premio de la ruleta" data-price="Consultar">Reclamar premio</button></article>
   </div>
 </section>
 
-<section class="container section">
+<section class="container section" id="confianza">
   <div class="section-title">
-    <div class="eyebrow">Experiencia MARYNEL</div>
-    <h2>Preparada para crecer</h2>
-    <p>En la siguiente fase podremos conectar productos reales, precios, stock y fotografías mediante Firebase.</p>
+    <div class="eyebrow">COMPRA FÁCIL</div>
+    <h2>Todo listo para vender</h2>
+    <p>La página queda preparada para evolucionar después a un catálogo administrado con Firebase.</p>
   </div>
   <div class="grid">
-    <article class="card"><div class="icon">📦</div><h3>Productos</h3><p>Catálogo administrable.</p></article>
-    <article class="card"><div class="icon">🔐</div><h3>Administrador</h3><p>Panel privado para gestionar artículos.</p></article>
-    <article class="card"><div class="icon">📲</div><h3>WhatsApp</h3><p>Contacto directo para pedidos y consultas.</p></article>
+    <article class="card"><div class="icon">📦</div><h3>Catálogo</h3><p>Productos, precios y disponibilidad organizados para el cliente.</p></article>
+    <article class="card"><div class="icon">❤️</div><h3>Favoritos</h3><p>El visitante puede guardar productos que le interesen durante su visita.</p></article>
+    <article class="card"><div class="icon">📲</div><h3>Pedido rápido</h3><p>Un toque prepara el mensaje del producto para WhatsApp.</p></article>
   </div>
 </section>
 </main>
@@ -262,5 +325,104 @@ footer strong{color:#fff;letter-spacing:4px}
     <small>Innovación • Movimiento • Futuro</small>
   </div>
 </footer>
+
+<a id="floatingWhatsApp" class="floating-wa" href="#" aria-label="Contactar por WhatsApp">💬 WhatsApp</a>
+
+<div class="modal" id="orderModal" role="dialog" aria-modal="true" aria-labelledby="orderTitle">
+  <div class="modal-box">
+    <button class="close-modal" id="closeModal" aria-label="Cerrar">×</button>
+    <h3 id="orderTitle">Preparar pedido</h3>
+    <p id="orderDescription">Indica la cantidad y continuamos por WhatsApp.</p>
+    <div class="modal-row"><input id="quantity" type="number" min="1" value="1" aria-label="Cantidad"><button class="mini-btn buy" id="sendOrder">Enviar pedido</button></div>
+  </div>
+</div>
+
+<script>
+/* ===== MARYNEL · CONFIGURACIÓN =====
+   Coloca aquí el número de WhatsApp de MARYNEL con código de país,
+   sin +, espacios ni guiones. Ejemplo Guatemala: 502XXXXXXXX.
+*/
+const WHATSAPP_NUMBER = "50248681178";
+let selectedProduct = "";
+let selectedPrice = "";
+
+function whatsappUrl(message){
+  if(!WHATSAPP_NUMBER){
+    alert("Configura primero WHATSAPP_NUMBER en el HTML con el número de MARYNEL.");
+    return null;
+  }
+  return "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message);
+}
+
+function openWhatsApp(message){
+  const url=whatsappUrl(message);
+  if(url) window.open(url,"_blank");
+}
+
+document.querySelectorAll('.filter-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    filterProducts();
+  });
+});
+
+document.getElementById('productSearch').addEventListener('input',filterProducts);
+
+function filterProducts(){
+  const term=document.getElementById('productSearch').value.toLowerCase().trim();
+  const category=document.querySelector('.filter-btn.active').dataset.category;
+  let visible=0;
+  document.querySelectorAll('.product-card').forEach(card=>{
+    const matchText=card.dataset.name.toLowerCase().includes(term);
+    const matchCategory=category==='Todos'||card.dataset.category===category;
+    const show=matchText&&matchCategory;
+    card.style.display=show?'block':'none';
+    if(show) visible++;
+  });
+  document.getElementById('emptyProducts').style.display=visible?'none':'block';
+}
+
+document.querySelectorAll('.favorite').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    btn.classList.toggle('active');
+    btn.textContent=btn.classList.contains('active')?'♥':'♡';
+  });
+});
+
+document.querySelectorAll('[data-fav-text]').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const fav=btn.closest('.product-card').querySelector('.favorite');
+    fav.click();
+    btn.textContent=fav.classList.contains('active')?'♥ Guardado':'♡ Favorito';
+  });
+});
+
+const modal=document.getElementById('orderModal');
+document.querySelectorAll('[data-product]').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    selectedProduct=btn.dataset.product;
+    selectedPrice=btn.dataset.price;
+    document.getElementById('orderDescription').textContent=`${selectedProduct} · ${selectedPrice}. Indica la cantidad y continuamos por WhatsApp.`;
+    document.getElementById('quantity').value=1;
+    modal.classList.add('show');
+  });
+});
+
+document.getElementById('closeModal').addEventListener('click',()=>modal.classList.remove('show'));
+modal.addEventListener('click',e=>{if(e.target===modal) modal.classList.remove('show')});
+
+document.getElementById('sendOrder').addEventListener('click',()=>{
+  const qty=Math.max(1,parseInt(document.getElementById('quantity').value)||1);
+  openWhatsApp(`Hola MARYNEL 👋%0A%0AQuiero pedir:%0AProducto: ${selectedProduct}%0APrecio: ${selectedPrice}%0ACantidad: ${qty}%0A%0A¿Me pueden confirmar disponibilidad?`);
+  modal.classList.remove('show');
+});
+
+document.getElementById('floatingWhatsApp').addEventListener('click',e=>{
+  e.preventDefault();
+  openWhatsApp('Hola MARYNEL 👋 Quiero información sobre sus productos y promociones.');
+});
+</script>
+
 </body>
 </html>
