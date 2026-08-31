@@ -244,6 +244,50 @@ button:disabled{opacity:.45;cursor:not-allowed}
   .admin-actions{width:100%}.admin-actions button{flex:1}
 }
 
+
+/* ===== RULETA MARYNEL ===== */
+.roulette-nav{
+  color:#fff!important;
+  border:1px solid rgba(94,239,255,.5);
+  background:rgba(0,123,255,.13);
+  font-weight:900!important;
+  box-shadow:0 0 18px rgba(0,123,255,.10);
+}
+.roulette-nav:hover{background:rgba(0,123,255,.28)!important;color:#fff!important}
+.roulette-banner{
+  display:flex;align-items:center;gap:28px;padding:30px;
+  border:1px solid rgba(24,216,255,.48);border-radius:24px;
+  background:
+    radial-gradient(circle at 15% 50%,rgba(0,150,255,.24),transparent 30%),
+    linear-gradient(120deg,rgba(4,31,61,.96),rgba(2,7,16,.96));
+  box-shadow:0 20px 60px rgba(0,0,0,.32),0 0 35px rgba(0,123,255,.10);
+}
+.roulette-icon{
+  width:105px;height:105px;flex:0 0 105px;border-radius:50%;
+  display:grid;place-items:center;font-size:55px;
+  background:radial-gradient(circle,#123f69,#020812 68%);
+  border:1px solid #18d8ff;
+  box-shadow:0 0 35px rgba(0,216,255,.22);
+}
+.roulette-content h2{margin:6px 0 8px}
+.roulette-content p{color:var(--muted);line-height:1.6;max-width:700px}
+.roulette-content small{display:block;color:#7590ac;margin-top:12px}
+.roulette-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.roulette-main-btn{text-decoration:none;display:inline-flex;align-items:center;justify-content:center}
+.floating-roulette{
+  position:fixed;right:18px;bottom:70px;z-index:80;
+  color:#fff;text-decoration:none;padding:12px 15px;border-radius:999px;
+  border:1px solid rgba(94,239,255,.55);
+  background:rgba(2,18,35,.95);font-size:12px;font-weight:900;
+  box-shadow:0 10px 30px rgba(0,0,0,.35);
+}
+.floating-roulette:hover{transform:translateY(-2px)}
+@media(max-width:700px){
+  .roulette-banner{flex-direction:column;text-align:center;padding:24px}
+  .roulette-actions{justify-content:center}
+  .roulette-nav{border:0;background:transparent}
+}
+
 </style>
 
 <style>
@@ -267,6 +311,7 @@ button:disabled{opacity:.45;cursor:not-allowed}
     <a class="brand" href="#inicio"><div class="logo"><b>M</b></div><span>MARYNEL</span></a>
     <nav>
       <a href="#inicio">INICIO</a>
+      <a class="roulette-nav" href="https://danny941117-byte.github.io/Ruleta-marynel-premios/" target="_blank" rel="noopener">🎡 RULETA MARYNEL</a>
       <a href="#productos">PRODUCTOS</a>
       <a href="#promociones">PROMOCIONES</a>
       <a href="#avatar">LYRA X7</a>
@@ -374,6 +419,27 @@ button:disabled{opacity:.45;cursor:not-allowed}
 </section>
 
 
+
+<section class="container section roulette-section" id="ruleta">
+  <div class="roulette-banner">
+    <div class="roulette-icon">🎡</div>
+    <div class="roulette-content">
+      <span class="eyebrow">PREMIOS MARYNEL</span>
+      <h2>¡Juega en la Ruleta MARYNEL!</h2>
+      <p>Participa, descubre tu premio y, si resultas ganador, podrás reclamarlo directamente por WhatsApp.</p>
+      <div class="roulette-actions">
+        <a class="btn roulette-main-btn" href="https://danny941117-byte.github.io/Ruleta-marynel-premios/" target="_blank" rel="noopener">
+          🎡 JUGAR RULETA
+        </a>
+        <button class="btn alt" type="button" onclick="scrollToPrizeInfo()">
+          🎁 VER PREMIOS
+        </button>
+      </div>
+      <small>La ruleta se abrirá en una nueva pestaña.</small>
+    </div>
+  </div>
+</section>
+
 <section class="container section" id="promociones">
   <div class="section-title">
     <div class="eyebrow">OFERTAS Y PREMIOS</div>
@@ -430,6 +496,8 @@ button:disabled{opacity:.45;cursor:not-allowed}
     <small>Innovación • Movimiento • Futuro</small>
   </div>
 </footer>
+
+<a id="floatingRoulette" class="floating-roulette" href="https://danny941117-byte.github.io/Ruleta-marynel-premios/" target="_blank" rel="noopener" aria-label="Abrir Ruleta MARYNEL">🎡 Jugar ruleta</a>
 
 <a id="floatingWhatsApp" class="floating-wa" href="#" aria-label="Contactar por WhatsApp">💬 WhatsApp</a>
 
@@ -651,6 +719,14 @@ renderProducts();
 renderAdmin();
 </script>
 
+
+
+<script>
+function scrollToPrizeInfo(){
+  const el=document.getElementById("promociones");
+  if(el) el.scrollIntoView({behavior:"smooth",block:"start"});
+}
+</script>
 
 </body>
 </html>
