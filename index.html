@@ -426,7 +426,7 @@ button:disabled{opacity:.45;cursor:not-allowed}
     <div class="roulette-content">
       <span class="eyebrow">PREMIOS MARYNEL</span>
       <h2>¡Juega en la Ruleta MARYNEL!</h2>
-      <p>Participa, descubre tu premio y, si resultas ganador, podrás reclamarlo directamente por WhatsApp.</p>
+      <p>Participa y descubre si has ganado. Los premios desbloqueados se muestran exclusivamente dentro de la ruleta.</p>
       <div class="roulette-actions">
         <a class="btn roulette-main-btn" href="https://danny941117-byte.github.io/Ruleta-marynel-premios/" target="_blank" rel="noopener">
           🎡 JUGAR RULETA
@@ -440,37 +440,34 @@ button:disabled{opacity:.45;cursor:not-allowed}
   </div>
 </section>
 
+
 <section class="container section" id="promociones">
   <div class="section-title">
-    <div class="eyebrow">OFERTAS Y PREMIOS</div>
-    <h2>Promociones exclusivas</h2>
-    <p>Cuando alguien gane en la ruleta, aquí queda claro cómo reclamar su premio por WhatsApp.</p>
+    <div class="eyebrow">PROMOCIONES MARYNEL</div>
+    <h2>Beneficios y ofertas</h2>
+    <p>Los premios de la ruleta son exclusivos de la Ruleta MARYNEL y no se muestran ni se reclaman desde esta tienda.</p>
   </div>
 
   <div class="promo-grid">
-    <article class="promo prize-card">
-      <span class="tag">🎁 PREMIO</span>
-      <h3>Descuento especial</h3>
-      <p>Ganaste un descuento. Presiona el botón para reclamarlo por WhatsApp.</p>
-      <button class="mini-btn buy claim-prize" data-prize="Descuento especial">📲 Reclamar premio</button>
+    <article class="promo">
+      <span class="tag">🛍️ TIENDA</span>
+      <h3>Ofertas de productos</h3>
+      <p>Consulta los productos disponibles en nuestro catálogo y realiza tu pedido por WhatsApp.</p>
+      <a class="mini-btn buy" href="#productos" style="display:inline-flex;text-decoration:none;align-items:center;justify-content:center;">Ver catálogo</a>
     </article>
-    <article class="promo prize-card">
-      <span class="tag">👚 PREMIO</span>
-      <h3>Blusa</h3>
-      <p>Si la ruleta indicó BLUSA, solicita la entrega de tu premio por WhatsApp.</p>
-      <button class="mini-btn buy claim-prize" data-prize="Blusa">📲 Reclamar blusa</button>
+
+    <article class="promo">
+      <span class="tag">🎡 RULETA</span>
+      <h3>Premios exclusivos</h3>
+      <p>Los premios desbloqueables únicamente aparecen dentro de la Ruleta MARYNEL.</p>
+      <a class="mini-btn buy" href="https://danny941117-byte.github.io/Ruleta-marynel-premios/" target="_blank" rel="noopener" style="display:inline-flex;text-decoration:none;align-items:center;justify-content:center;">Abrir ruleta</a>
     </article>
-    <article class="promo prize-card">
-      <span class="tag">📱 PREMIO</span>
-      <h3>Vidrio templado</h3>
-      <p>Ganaste un vidrio templado. Consulta compatibilidad y coordina tu entrega.</p>
-      <button class="mini-btn buy claim-prize" data-prize="Vidrio templado">📲 Reclamar vidrio</button>
-    </article>
-    <article class="promo prize-card">
-      <span class="tag">🎧 PREMIO</span>
-      <h3>Audífono Bluetooth</h3>
-      <p>Ganaste un audífono Bluetooth. Reclámalo directamente por WhatsApp.</p>
-      <button class="mini-btn buy claim-prize" data-prize="Audífono Bluetooth">📲 Reclamar audífono</button>
+
+    <article class="promo">
+      <span class="tag">📲 WHATSAPP</span>
+      <h3>Atención directa</h3>
+      <p>Para consultas sobre productos, comunícate directamente con MARYNEL.</p>
+      <a class="mini-btn buy" href="https://wa.me/50248681178" target="_blank" rel="noopener" style="display:inline-flex;text-decoration:none;align-items:center;justify-content:center;">Contactar</a>
     </article>
   </div>
 </section>
@@ -697,12 +694,6 @@ document.getElementById("adminList").addEventListener("click",e=>{
   }
 });
 
-document.querySelectorAll(".claim-prize").forEach(btn=>{
-  btn.addEventListener("click",()=>{
-    const prize=btn.dataset.prize;
-    openWhatsApp(`Hola MARYNEL 👋%0A%0A🎉 ¡Gané un premio en la Ruleta MARYNEL!%0A%0APremio: ${prize}%0A%0AQuiero reclamar mi premio. ¿Me indican cómo proceder?`);
-  });
-});
 
 function showToast(msg){
   let t=document.getElementById("toast");
